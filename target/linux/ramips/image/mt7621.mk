@@ -104,6 +104,16 @@ define Device/adslr_g7
 endef
 TARGET_DEVICES += adslr_g7
 
+define Device/qm_b1
+  $(Device/dsa-migration)
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := QM
+  DEVICE_MODEL := B1
+  DEVICE_VARIANT := 16M
+  DEVICE_PACKAGES := kmod-ata-ahci kmod-sdhci-mt7620 kmod-mt76x2 \
+	kmod-usb3 wpad-openssl
+endef
+
 define Device/afoundry_ew1200
   $(Device/dsa-migration)
   IMAGE_SIZE := 16064k
